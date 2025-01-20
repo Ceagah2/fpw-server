@@ -1,4 +1,4 @@
-import { GameCategory } from "./GameCategory";
+import { GameCategory } from './GameCategory';
 
 export class Game {
   id: string;
@@ -6,5 +6,5 @@ export class Game {
   photoUrl?: string;
   category: GameCategory;
   createdAt: Date;
-  updatedAt: Date
+  updatedAt: Date;
 }

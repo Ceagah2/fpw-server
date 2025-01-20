@@ -1,5 +1,4 @@
-import { User } from "./User";
-
+import { User } from './User';
 
 export enum PrizeType {
   FIRST_PLACE = 'FIRST_PLACE',
@@ -8,15 +7,15 @@ export enum PrizeType {
 }
 
 export enum ChampionshipType {
-  WEEKLY = "WEEKLY",
-  DAILY = "DAILY",
-  MONTHLY = "MONTHLY",
+  WEEKLY = 'WEEKLY',
+  DAILY = 'DAILY',
+  MONTHLY = 'MONTHLY',
 }
 
 export enum ChampionshipStatus {
-  PENDING = "PENDING",
-  ONGOING = "ONGOING",
-  COMPLETED = "COMPLETED",
+  PENDING = 'PENDING',
+  ONGOING = 'ONGOING',
+  COMPLETED = 'COMPLETED',
 }
 
 export class Championship {
@@ -30,11 +29,10 @@ export class Championship {
   numOfPlayers: number;
   players: User[];
   registrationFee: number;
-  prizes: Prizes[];
+  prizes: PrizeType[];
   description: string;
   rules: string;
   status: ChampionshipStatus;
   createdAt: Date;
   updatedAt: Date;
-
 }
