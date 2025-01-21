@@ -1,29 +1,33 @@
-import { Column, CreateDateColumn, Entity, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
-import { User } from "./User";
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToOne,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { User } from './User';
 
 @Entity('transactions')
-
 export class Transaction {
-  
   @PrimaryColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
-  type: string
+  type: string;
 
   @Column()
-  date: Date
+  date: Date;
 
   @Column()
-  amount: number
+  amount: number;
 
   @OneToOne(() => User, (user) => user.id)
-  sentTo: User
+  sentTo: User;
 
   @CreateDateColumn()
-  createdAt: Date
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date
+  updatedAt: Date;
 }

@@ -1,23 +1,26 @@
-import { Column, CreateDateColumn, Entity, OneToOne, PrimaryColumn } from "typeorm";
-import { User } from "./User";
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToOne,
+  PrimaryColumn,
+} from 'typeorm';
+import { User } from './User';
 
 @Entity('sessions')
-
-export class Session{
-
+export class Session {
   @PrimaryColumn('uuid')
   id: string;
 
   @OneToOne(() => User, (user) => user.id)
-  user: User
+  user: User;
 
   @Column()
-  token: string
+  token: string;
 
   @Column()
-  expiresAt: Date
+  expiresAt: Date;
 
   @CreateDateColumn()
-  createdAt: Date
+  createdAt: Date;
 }

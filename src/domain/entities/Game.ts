@@ -1,6 +1,12 @@
-import { Column, CreateDateColumn, Entity, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { Category } from "./Category";
-
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { Category } from './Category';
 
 @Entity('games')
 export class Game {
@@ -19,11 +25,11 @@ export class Game {
   description: string;
 
   @OneToOne(() => Category, (category) => category.id, { eager: true })
-  category: Category
+  category: Category;
 
   @CreateDateColumn()
-  createdAt: Date
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date
+  updatedAt: Date;
 }
